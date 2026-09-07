@@ -46,21 +46,14 @@ class UserFactory extends Factory
     public function admin()
     {
         return $this->state(fn (array $attributes) => [
-            'role' => 3,
+            'role' => 'admin',
         ]);
     }
 
     public function employee()
     {
         return $this->state(fn (array $attributes) => [
-            'role' => 2,
-        ]);
-    }
-
-    public function customer()
-    {
-        return $this->state(fn (array $attributes) => [
-            'role' => 1,
+            'role' => 'employee',
         ]);
     }
 }

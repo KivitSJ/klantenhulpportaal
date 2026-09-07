@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->integer('submitted_by_user_id');
-            $table->integer('assigned_to_user_id');
+            $table->integer('submitted_by');
+            $table->integer('assigned_to');
             $table->integer('category_id');
-            $table->integer('priority');
+            $table->enum('priority', ['high', 'medium', 'low'])->default('low');
             $table->string('title');
             $table->text('content');
-            $table->integer('status');
+            $table->enum('status', ['open', 'assigned', 'pending', 'rejected', 'in-progress', 'closed'])->default('open');
             $table->timestamps();
         });
     }
