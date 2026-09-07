@@ -19,8 +19,9 @@ class NoteFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(),
-            'content' => $this->faker->paragraph(),
+            'user_id' => $this->faker->numberBetween(1, 7),
+            'ticket_id' => $this->faker->numberBetween(1, 200),
+            'content' => $this->faker->paragraph(4),
         ];
     }
 }
