@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('submitted_by_user_id');
             $table->integer('assigned_to_user_id');
             $table->integer('category_id');
-            $table->string('priority');
+            $table->integer('priority');
             $table->string('title');
             $table->text('content');
             $table->integer('status');

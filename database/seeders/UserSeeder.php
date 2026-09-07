@@ -16,9 +16,43 @@ class UserSeeder extends Seeder
     {
         User::factory()->admin()->create([
             'name' => 'Sean',
-            'email' => 'test@example.com'
+            'email' => 'test1@example.com'
         ]);
-        User::factory()->employee()->count(5)->create();
-        User::factory()->customer()->count(43)->create();
+        User::factory()->admin()->create([
+            'name' => 'Bob',
+            'email' => 'test2@example.com'
+        ]);
+        User::factory()->employee()->create([
+            'name' => 'Senna',
+            'email' => 'test3@example.com'
+        ]);
+        User::factory()->employee()->create([
+            'name' => 'Davy',
+            'email' => 'test4@example.com'
+        ]);
+        User::factory()->employee()->create([
+            'name' => 'Richard',
+            'email' => 'test5@example.com'
+        ]);
+        User::factory()->customer()->create([
+            'name' => 'Lisa',
+            'email' => 'test6@example.com'
+        ]);
+        User::factory()->customer()->create([
+            'name' => 'Douwina',
+            'email' => 'test7@example.com'
+        ]);
+        User::factory()->customer()->create([
+            'name' => 'Bas',
+            'email' => 'test8@example.com'
+        ]);
+        User::factory()->customer()->create([
+            'name' => 'Talitha',
+            'email' => 'test9@example.com'
+        ]);
+        User::factory()->customer()->create([
+            'name' => 'Jasper',
+            'email' => 'test10@example.com'
+        ]);
     }
 }
