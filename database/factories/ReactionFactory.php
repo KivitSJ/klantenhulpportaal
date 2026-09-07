@@ -20,10 +20,7 @@ class ReactionFactory extends Factory
         return [
             'user_id' => $this->faker->numberBetween(1, 50),
             'ticket_id' => $this->faker->numberBetween(1, 200),
-            'title' => $this->faker->words(5),
             'content' => $this->faker->sentence(4),
-            'status' => $this->faker->numberBetween(1, 4),
-            'priority' => $this->faker->numberBetween(1, 5),
         ];
     }
 }

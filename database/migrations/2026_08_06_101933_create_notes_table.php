@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->int('user_id');
-            $table->int('ticket_id');
+            $table->integer('user_id');
+            $table->integer('ticket_id');
             $table->text('content');
             $table->timestamps();
         });

@@ -21,8 +21,9 @@ class TicketFactory extends Factory
             'submitted_by_user_id' => $this->faker->numberBetween(8, 50),
             'assigned_to_user_id' => $this->faker->numberBetween(1, 5),
             'category_id' => $this->faker->numberBetween(1, 10),
-            'status' => $this->faker->numberBetween(1,5),
-            'title' => $this->faker->words(5),
+            'priority' => $this->faker->numberBetween(1 ,4),
+            'status' => $this->faker->numberBetween(1, 5),
+            'title' => $this->faker->words(5, true),
             'content' => $this->faker->paragraph(5),
         ];
     }
