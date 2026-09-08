@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->integer('submitted_by');
-            $table->integer('assigned_to');
+            $table->integer('assigned_to')->nullable();
             $table->integer('category_id');
             $table->enum('priority', ['high', 'medium', 'low'])->default('low');
             $table->string('title');

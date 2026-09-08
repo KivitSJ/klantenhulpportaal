@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Foundation\Http\FormRequest;
 
-class AuthRequest extends BaseFormRequest
+class UpdateUserRequest extends BaseFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +23,8 @@ class AuthRequest extends BaseFormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|string',
-            'password' => 'required'
+            'name' => 'required',
+            'email' => 'required',
         ];
     }
 }

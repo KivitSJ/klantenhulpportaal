@@ -49,11 +49,4 @@ class UserFactory extends Factory
             'role' => 'admin',
         ]);
     }
-
-    public function employee()
-    {
-        return $this->state(fn (array $attributes) => [
-            'role' => 'employee',
-        ]);
-    }
 }

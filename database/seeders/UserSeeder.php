@@ -22,11 +22,11 @@ class UserSeeder extends Seeder
             'name' => 'Bob',
             'email' => 'test2@example.com'
         ]);
-        User::factory()->employee()->create([
+        User::factory()->admin()->create([
             'name' => 'Senna',
             'email' => 'test3@example.com'
         ]);
-        User::factory()->employee()->create([
+        User::factory()->admin()->create([
             'name' => 'Davy',
             'email' => 'test4@example.com'
         ]);
