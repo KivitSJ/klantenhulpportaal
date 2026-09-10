@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function login(AuthRequest $request)
+    public function login(AuthRequest $request): \Illuminate\Http\JsonResponse
     {
         $credentials = $request->validated();
         if (Auth::attempt($credentials)) {
@@ -21,12 +21,12 @@ class AuthController extends Controller
         ], 401);
     }
 
-    public function user()
+    public function user(): UserResource
     {
         return new UserResource(Auth::user());
     }
 
-    public function logout()
+    public function logout(): \Illuminate\Http\JsonResponse
     {
         Auth::logout();
         request()->session()->invalidate();

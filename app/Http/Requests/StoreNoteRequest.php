@@ -25,7 +25,7 @@ class StoreNoteRequest extends BaseFormRequest
         return [
             'user_id' => 'required|integer',
             'ticket_id' => 'required|integer',
-            'content' => 'required'
+            'content' => 'required',
         ];
     }
 }

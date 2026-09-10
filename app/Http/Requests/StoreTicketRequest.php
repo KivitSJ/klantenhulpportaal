@@ -29,7 +29,7 @@ class StoreTicketRequest extends BaseFormRequest
             'priority' => 'required',
             'title' => 'required',
             'content' => 'required',
-            'status' => 'required'
+            'status' => 'required',
         ];
     }
 }

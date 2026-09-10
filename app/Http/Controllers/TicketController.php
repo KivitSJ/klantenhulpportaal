@@ -2,63 +2,52 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTicketRequest;
+use App\Http\Requests\UpdateTicketRequest;
+use App\Http\Resources\TicketResource;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use App\Models\Ticket;
+
 use Illuminate\Http\Request;
+
 
 class TicketController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): \Illuminate\Http\Resources\Json\AnonymousResourceCollection
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return TicketResource::collection(Ticket::all());
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreTicketRequest $request): \Illuminate\Http\JsonResponse
     {
-        //
-    }
+        $validated = $request->validated();
+        Ticket::create($validated);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        return response()->json(['message' => 'Ticket succesvol opgeslagen']);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateTicketRequest $request, Ticket $ticket): \Illuminate\Http\JsonResponse
     {
-        //
+        $ticket->update($request->validated());
+
+        return response()->json(['message' => 'Ticket succesvol geupdated']);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Ticket $ticket): \Illuminate\Http\JsonResponse
     {
-        //
+        $ticket->delete();
+        return response()->json(['message' => 'Ticket succesvol verwijderd']);
     }
 }

@@ -23,7 +23,7 @@ class AuthRequest extends BaseFormRequest
     {
         return [
             'email' => 'required|string',
-            'password' => 'required'
+            'password' => 'required',
         ];
     }
 }
