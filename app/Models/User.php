@@ -8,6 +8,7 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -30,4 +31,25 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function tickets(): HasMany
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    public function notes(): HasMany
+    {
+        return $this->hasMany(Note::class);
+    }
+    
+    public function reactions(): HasMany
+    {
+        return $this->hasMany(Reaction::class);
+    }
+    
+    public function isAdmin(): bool
+    {
+        return $this->is_admin === true;
+    }
+
 }

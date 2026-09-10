@@ -12,7 +12,8 @@ class UpdateUserRequest extends BaseFormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        $user = $this->user();
+        return $user->isAdmin();
     }
 
     /**

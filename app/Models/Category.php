@@ -13,7 +13,7 @@ class Category extends Model
     
     public function tickets(): HasMany 
     {
-        return $this->hasMany(Ticket::class);
+        return $this->belongToMany(Ticket::class);
     }
     
 }

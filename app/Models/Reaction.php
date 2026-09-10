@@ -11,13 +11,9 @@ class Reaction extends Model
     use HasFactory;
     protected $fillable = ['user_id', 'ticket_id', 'content'];
 
-    public function ticket(): BelongsTo
+    public function tickets(): BelongsTo
     {
         return $this->belongsTo(Ticket::class);
     }
 
-    public function user(): BelongsTo 
-    {
-        return $this->belongsTo(User::class);
-    }
 }

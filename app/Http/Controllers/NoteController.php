@@ -37,6 +37,7 @@ class NoteController extends Controller
      */
     public function update(UpdateNoteRequest $request, Note $note): \Illuminate\Http\JsonResponse
     {
+
         $note->update($request->validated());
 
         return response()->json(['message' => 'Notitie succesvol geupdated'], 200);
