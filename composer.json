@@ -1,0 +1,12 @@
+{
+    "name": "sean/klantenhulpportaal",
+    "require": {
+        "laravel/framework": "^13.31"
+    },
+    "authors": [
+        {
+            "name": "KivitSJ",
+            "email": "107221754+KivitSJ@users.noreply.github.com"
+        }
+    ]
+}
