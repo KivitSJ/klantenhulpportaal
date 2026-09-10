@@ -16,9 +16,17 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+    public function index(Request $request): \Illuminate\Http\Resources\Json\AnonymousResourceCollection
     {
-        return UserResource::collection(User::all());
+        $user = $request->user();
+
+        if (!$user->isAdmin()) {
+            $users = User::admins()->orWhere('id', $user->id)->get();
+            
+        }
+
+        $users = User::all();
+        return UserResource::collection($users);
     }
 
     /**
