@@ -1,9 +1,9 @@
-import Overview from "./pages/Category-Overview.vue";
-import Create from "./pages/Category-Create.vue";
-import Edit from "./pages/Category-Edit.vue";
+import Overview from "./pages/Reaction-Overview.vue";
+import Create from "./pages/Reaction-Create.vue";
+import Edit from "./pages/Reaction-Edit.vue";
 
-export const ticketRoutes =  [
-    { path: '/categories', component: Overview, name: 'tickets.overview' },
-    { path: '/categories/create', component: Create, name: 'tickets.create' },
-    { path: '/categories/:id/edit', component: Edit, name: 'tickets.edit' }
+export const reactionRoutes =  [
+    { path: '/reaction', component: Overview, name: 'reactions.overview' },
+    { path: '/reaction/create', component: Create, name: 'reactions.create' },
+    { path: '/reaction/:id/edit', component: Edit, name: 'reactions.edit' }
 ];
